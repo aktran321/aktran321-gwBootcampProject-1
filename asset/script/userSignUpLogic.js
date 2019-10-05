@@ -34,6 +34,7 @@ $(document).ready(function(){
     function handleSignUp(){
         
         console.log("I am here !");
+
         var userNameInput = $("#user-name").val().trim();
         var firstNameInput = $("#first-name").val().trim();
         var lastNameInput = $("#last-name").val().trim();

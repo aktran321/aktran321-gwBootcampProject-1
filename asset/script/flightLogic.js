@@ -98,4 +98,3 @@ function writeNewFlightSchedule(flightNumberInput,destinationInput,flightDateInp
   // Get a key uniquely identify the object that will be saved to DB
   flight.push(scheduleData);
 }
-

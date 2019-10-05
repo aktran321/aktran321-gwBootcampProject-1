@@ -13,40 +13,31 @@
         <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
         <title> FF </title>
     </head>
+
     <body>
         <div class="jumbotron row text-center">  
-            <div class="col-8" id="user-name-welcome"> NAME OF APP </div>
-            <div class="col-4" id="user-name-welcome"> HERE GOES WELCOME MESSAGE TO USER </div>
+                <div class="col-8" id="name-app"> NAME OF APP </div>
+                <div class="col-4" id="user-name-welcome"> HERE GOES WELCOME MESSAGE TO USER </div>
         </div>
-
+    
         <div class ="container">
             <div class = "row">
                 <div class = "col-6">
-                    <div class="w-100 badge-primary pl-3"> User Sign Up</div>
-
+                    <div class="w-100 badge-primary pl-3"> User Login </div>
                     <form class="mb-4 border border-primary">
                         <div class="m-4">
-                            <label for="user-name">Username : </label>
+                            <label for="user-name"> User Name : </label>
                             <input type="text" id="user-name" class="form-control">
-                            <label for="first-name">First Name : </label>
-                            <input type="text" id="first-name" class="form-control">
-                            <label for="last-name">Last Name : </label>
-                            <input type="text" id="last-name" class="form-control">
-                            <label for="password">Password : </label>
-                            <input type="password" id="password" class="form-control">
-                            <label for="password-check">Re-enter Password : </label>
-                            <input type="password" id="password-check" class="form-control">
+                            <label for="password"> Password : </label>
+                            <input type="password" id="Password" class="form-control">
                             <hr>
-
-                            <button class="btn btn-default" id="submit-user" type="submit">Submit</button>
-
+                            <button class="btn btn-default" id="user-login" type="submit">Log In</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        
-        <script type="text/javascript" src="asset\script\userSignUpLogic.js"></script>
 
+        <script type="text/javascript" src="asset\script\userLoginLogic.js"></script>
     </body>
 </html>
