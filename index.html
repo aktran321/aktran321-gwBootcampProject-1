@@ -4,11 +4,17 @@
  <!--Bootstrap Link-->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<div class="jumbotron text-center">
-    NAME OF APP HERE
-</div>
+
+  <!-- jQuery References -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <!-- Firebase References -->
+ <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
     </head>
     <body>
+        <div class="jumbotron text-center"> NAME OF APP HERE </div>
+                
         <div class ="container">
             <div class = "row">
                 <div class = "col-6">
@@ -17,6 +23,8 @@
                     </div>
                     <form class="mb-2 border border-primary">
                         <div class="m-3">
+                            <label for="flightNumber">Flight #</label>
+                            <input type="text" id="flight-number" class="form-control">
                             <label for="destination">Destination</label>
                             <input type="text" id="destination" class="form-control">
                             <label for="date">Date</label>
@@ -28,7 +36,7 @@
                         </div>
                     </form>
                 </div>
-                <div class = "col-6">
+                <div class = "col-6" id="flight-data">
                     Flight Information Here!
                 </div>
             </div>
@@ -44,5 +52,8 @@
                 </div>
             
         </div>
+
+        <script type="text/javascript" src="asset\script\flightLogic.js"></script>
+
     </body>
 </html>
