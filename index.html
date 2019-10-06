@@ -4,6 +4,12 @@
  <!--Bootstrap Link-->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <!--Carousel does not work without the scripts below-->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ 
 <div class="jumbotron text-center">
     NAME OF APP HERE
 </div>
@@ -13,16 +19,26 @@
             <div class = "row">
                 <div class = "col-6">
                     <div class="w-100 badge-primary pl-3">
-                            Flight Form Here
+                            Destination Information
                     </div>
                     <form class="mb-2 border border-primary">
                         <div class="m-3">
-                            <label for="destination">Destination</label>
-                            <input type="text" id="destination" class="form-control">
-                            <label for="date">Date</label>
-                            <input type="text" id="date" class="form-control">
-                            <label for="airline">Airline</label>
-                            <input type="text" id="airline" class="form-control">
+                            <div class="row">
+                                <div class="col w-100">
+                                        <label for="destination">City</label>
+                                        <input type="text" id="destination" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                        <label for="date">Arrival Date</label>
+                                        <input type="text" id="date" class="form-control form-control-sm">
+                                </div>
+                                <div class="col">
+                                        <label for="airline">Departure Date</label>
+                                        <input type="text" id="airline" class="form-control form-control-sm">
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -33,6 +49,84 @@
                 <div class="row">
                     <div class="col-6">
                             Weather Information Here
+<!--Carousel,slide animation,data-ride ="carousel" tells Bootstrap to begin animating the carousel immediately-->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class = "row">
+                  <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                                </div>
+                  </div>
+                  <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                                </div>
+                    </div>
+                    <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                    </div>
+                        </div>
+              </div>
+                
+                              
+                          
+                      
+          </div>
+          <div class="carousel-item">
+                <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                       
+          </div>
+          <div class="carousel-item">
+                <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                      
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
                     </div>
                 
                
