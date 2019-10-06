@@ -1,16 +1,4 @@
 $(document).ready(function(){
-    // Gets from local storage the username and first name of the user.
-    // Later we will check to see if this is null or not.
-    var currentUser = sessionStorage.getItem("user-name");
-    var firstName = sessionStorage.getItem("first-name");
-    console.log(firstName);
-
-    // Checks local storage to see if we have a returning user. 
-    // If null then either the user either has not logged in or we have a new user.
-    if(currentUser == null)
-        $("#user-name-welcome").text("Welcome user ! Are you new here ?");
-    else
-        $("#user-name-welcome").text("Welcome back " + firstName + ' ! ');
 
     const firebaseConfig = {
         apiKey: "AIzaSyDORWg5o64fPN4R0Cnt1DlwC_8dWfEhI4U",
@@ -22,10 +10,8 @@ $(document).ready(function(){
         appId: "1:15407877860:web:a9fe39f08a0be2871426f1"
       };
     
-    // Initialize the firebase DB
     firebase.initializeApp(firebaseConfig);
     
-    // References the firebase DB. New users will be saved to the user table.
     var database = firebase.database();
     var users = database.ref("/users");
 
@@ -33,30 +19,59 @@ $(document).ready(function(){
         var key = $("#user-name").val().trim();
 
         return users.once('value').then(function(snapshot) {
-            var passwordEntered = $("#password").val().trim();
-            var usernameEntered = $("#user-name").val().trim();
-
-            if(passwordValid(snapshot.val()[usernameEntered].password, passwordEntered)){
-                var firstName = snapshot.val()[usernameEntered].firstName;
-                sessionStorage.clear();
-                sessionStorage.setItem("user-name",usernameEntered);
-                sessionStorage.setItem("first-name",firstName);
-                console.log(usernameEntered);
-                $("#user-name-welcome").text("Welcome back " + firstName + ' ! ');
-            }
-            else {
-                console.log("Sorry ! Please check the username / password entered !");
-            }   
-
+            console.log(snapshot.val()[key].password);
             });
     }
 
-    function passwordValid(a,b){
-        if(a===b)
-            return true;
-        else 
-            return false;
-    };
+    // function passwordValid(a,b){
+    //     if(a===b)
+    //         return true;
+    //     else 
+    //         return false;
+    // };
+
+    // function writeUserToDB(u,k){
+    //     var key = k;
+    //     var user = u;
+    //     //custom object
+    //     flight.child(key).set(user);
+    // };
+    
+    // //flight-number
+
+    // function handleSignUp(){
+        
+    //     console.log("I am here !");
+
+    //     var userNameInput = $("#user-name").val().trim();
+    //     var firstNameInput = $("#first-name").val().trim();
+    //     var lastNameInput = $("#last-name").val().trim();
+    //     var passwordInput = $("#password").val().trim();
+    //     var passwordCheckInput = $("#password-check").val().trim();
+
+    //     if(passwordValid(passwordInput,passwordCheckInput)){
+    //         // checkExistance(userName);
+
+    //         if(false)
+    //             alert("Sorry ! Username already exists !");
+    //         else{
+    //             key = userNameInput;
+
+    //             var user = {
+    //              firstName: firstNameInput,
+    //              lastName: lastNameInput,
+    //              password: passwordInput}
+                 
+                 
+    //             console.log("I am user-name " + key);
+    //             console.log("I am object ");
+    //             console.log(user);
+                
+    //             writeUserToDB(user,key);
+    //         }
+
+    //     }
+    // }
 
     $("#user-login").on("click", function(){
         event.preventDefault();
