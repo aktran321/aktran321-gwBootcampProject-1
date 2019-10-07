@@ -1,6 +1,6 @@
 
   
-  body {
+  body, .jumbotron {
     /* The image used */
     background-image: url("images/sky-background.jpg");
   
