@@ -1,61 +1,115 @@
 <!doctype html>
-<html lang="en">
+<html lang="en">    
     <head>
-        <!-- Character encoding -->
-        <meta charset="UTF-8">
-        <!--Bootstrap Link-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- jQuery References -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!-- Character encoding -->
+            <meta charset="UTF-8">
+            <!--Bootstrap Link-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+                 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+            <!-- jQuery References -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+            <!-- Firebase References -->
+            <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
+        
+            <!-- Plotly library -->
+            <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
 
-        <!-- Firebase References -->
-        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
-        <title> FF </title>
+            <!--Library for carousel does not work without the scripts below-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+            <link rel="stylesheet" href="style.css">
+
+            <title> FF Main Page</title>
     </head>
+
     <body>
-        <div class="jumbotron text-center"> NAME OF APP HERE </div>          
-        <div class ="container">
+        <h1 class="text-center display-1 m-3">Flights and Fahrenheight</h1>
+        <img src="images/snow.png" id="move-me" style="position:absolute; top:0px; left: 0px; z-index: 10; height: 150px">
+        <button id="move-button">YO</button>
+        <div class ="container bg">
             <div class = "row">
-                <div class = "col-6">
+                <div class = "col-4">
                     <div class="w-100 badge-primary pl-3">
-                            Flight Form Here
+                        Flight Form
                     </div>
-                    <form class="mb-2 border border-primary">
+                    <form class="mb-2 bg-light border border-primary">
                         <div class="m-3">
                             <label for="flightNumber">Flight #</label>
                             <input type="text" id="flight-number" class="form-control">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" class="form-control">
                             <label for="destination">Destination</label>
                             <input type="text" id="destination" class="form-control">
-                            <label for="date">Date Departure</label>
-                            <input type="date" id="date" class="form-control">
-                            <label for="airline">Airline</label>
-                            <input type="text" id="airline" class="form-control">
                             <hr>
-                            <button class="btn btn-default" id="submit-flight" type="submit">Submit</button>
+                            <button class="btn btn-default badge-primary" id="submit-flight" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
-                <div class = "col-6" id="flight-data">
-                    Flight Information Here!
+
+                <div class = "col-8" id="flight-data">
+                    <div class="row"> 
+                        <div class="col badge-primary pl-3 w-100"> Flight Information Here! </div>
+                        
+                        <table style="width:100%" class=" col-12 flight bg-light">
+                            <tr class="header-flight">
+                                <th>Flight # </th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Time Arrival</th>
+                                <th>Status</th>
+                                <th>Aircraft Model</th>
+                            </tr>
+                        </table>
+                    </div>
+                       
                 </div>
             </div>
+
+            <!-- HERE AND BELOW IS ALL CODE FOR THE WEATHER CAROUSEL/ABOVE IS THE CLOTHING CAROUSEL-->
                 <div class="row">
-                    <div class="col-6">
-                            Weather Information Here
+                    <div class="col-4">
+                        <div class="row">
+                                <div class="col w-100 badge-primary ml-3 mr-3">
+                                        Packing Suggestions
+                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="col bg-light ml-3 mr-3">
+                                ALL OF THE IMAGES NEED TO BE APPENDED HERE
+                            </div>
+                        </div>
+                        
                     </div>
-                
-               
-                    <div class="col-6">
-                            Suggestions of what to wear here
+                    <div class = "col-8 bg-light">
+                        <div class="row">
+                            <div class="col w-100 badge-primary"> Weather Information </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-4">
+                                <img id="weather-image" src="not-found.png"/>
+                            </div>
+                            <div class="col-8">
+                                <div class="mt-3" id="weather-body">
+                                    <p id="headline">Headline: </p>
+                                    <p id="region">Region Affected: </p>
+                                    <p id="high-temp">High Temp: </p>
+                                    <p id="low-temp">Low Temp: </p>
+                                    <p id="forecast">Forecast Description: </p>
+                                </div>
+                            </div>
+                        </div>
+                           
                     </div>
-                </div>
-            
-        </div>
+
+                </div> <!--End of Row Div-->
 
         <script type="text/javascript" src="asset\script\flightLogic.js"></script>
-
+        
     </body>
 </html>
