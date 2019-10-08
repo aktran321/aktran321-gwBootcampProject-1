@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi There</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $("document").ready(function() {
+            console.log("I am here !");
+            
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://aerodatabox.p.rapidapi.com/flights/AA320/delays",
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "aerodatabox.p.rapidapi.com",
+                    "x-rapidapi-key": "91517b45bamsh422e95c783d3857p157a15jsne3d2bb772529"
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+        });
+
+    </script>
+</body>
+</html>

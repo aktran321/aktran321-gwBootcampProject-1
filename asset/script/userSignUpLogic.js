@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log("I am here !");
 
     const firebaseConfig = {
         apiKey: "AIzaSyDORWg5o64fPN4R0Cnt1DlwC_8dWfEhI4U",
@@ -14,7 +15,8 @@ $(document).ready(function(){
     
     var database = firebase.database();
     var flight = database.ref("/users");
-    
+    var users = database.ref("/users");
+
     function passwordValid(a,b){
         if(a===b)
             return true;
@@ -33,7 +35,7 @@ $(document).ready(function(){
 
     function handleSignUp(){
         
-        console.log("I am here !");
+        console.log("I am here to sign up !");
 
         var userNameInput = $("#user-name").val().trim();
         var firstNameInput = $("#first-name").val().trim();
@@ -42,33 +44,39 @@ $(document).ready(function(){
         var passwordCheckInput = $("#password-check").val().trim();
 
         if(passwordValid(passwordInput,passwordCheckInput)){
-            // checkExistance(userName);
+            
+            return users.once('value').then(function(snapshot) {
+                var usernameEntered = $("#user-name").val().trim();
+                console.log("I am here !");
+                console.log('usernameEntered',usernameEntered);
+                console.log('snapshot.val()',snapshot.val());
+                console.log('snapshot.val()[usernameEntered]',snapshot.val()[usernameEntered]);
+                if(snapshot.val()[usernameEntered] !== undefined){
+                    alert("Sorry ! Username already exists !");
+                }
+                else {
+                    key = userNameInput;
 
-            if(false)
-                alert("Sorry ! Username already exists !");
-            else{
-                key = userNameInput;
+                    var user = {
+                    firstName: firstNameInput,
+                    lastName: lastNameInput,
+                    password: passwordInput}
+                    
+                    
+                    console.log("I am user-name " + key);
+                    console.log("I am object ");
+                    console.log(user);
+                    
+                    writeUserToDB(user,key);
+                    window.location.href="userSignIn.html";
+                }   
 
-                var user = {
-                 firstName: firstNameInput,
-                 lastName: lastNameInput,
-                 password: passwordInput}
-                 
-                 
-                console.log("I am user-name " + key);
-                console.log("I am object ");
-                console.log(user);
-                
-                writeUserToDB(user,key);
+                });
             }
-
         }
-    }
 
     $("#submit-user").on("click", function(){
-        // event.preventDefault();
+        event.preventDefault();
         handleSignUp();
-    
     });
-
 });

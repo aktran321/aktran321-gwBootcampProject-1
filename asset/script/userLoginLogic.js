@@ -3,7 +3,6 @@ $(document).ready(function(){
     // Later we will check to see if this is null or not.
     var currentUser = sessionStorage.getItem("user-name");
     var firstName = sessionStorage.getItem("first-name");
-    console.log(firstName);
 
     // Checks local storage to see if we have a returning user. 
     // If null then either the user either has not logged in or we have a new user.
@@ -43,6 +42,7 @@ $(document).ready(function(){
                 sessionStorage.setItem("first-name",firstName);
                 console.log(usernameEntered);
                 $("#user-name-welcome").text("Welcome back " + firstName + ' ! ');
+                window.location.href="index.html";
             }
             else {
                 console.log("Sorry ! Please check the username / password entered !");
@@ -60,7 +60,8 @@ $(document).ready(function(){
 
     $("#user-login").on("click", function(){
         event.preventDefault();
-        checkPasswordCorrect(); 
+        checkPasswordCorrect();
+
     });
 
 });
