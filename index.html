@@ -3,225 +3,102 @@
     
     <head>
             <meta name="viewport" content="width=device-width, initial-scale=1">
- <!--Bootstrap Link-->
+ 
+<!-- <div class="jumbotron text-center">
+    <h1>Flights and Fahrenheight</h1>
+</div>
+    </head> -->
+    <body>
+        
+        <h1 class="text-center display-1 m-3">Flights and Fahrenheight</h1>
+        <img src="images/snow.png" id="move-me" style="position:absolute; top:0px; left: 0px; z-index: 10; height: 150px">
+        <button id="move-button">YO</button>
+        <div class ="container bg">
+            <div class = "row">
+                    <div class = "col-4">
+                            <div class="w-100 badge-primary pl-3">
+                                    Flight Form
+                            </div>
+                            <form class="mb-2 bg-light border border-primary">
+                                <div class="m-3">
+                                    <label for="flightNumber">Flight #</label>
+                                    <input type="text" id="flight-number" class="form-control">
+                                    <label for="date">Date</label>
+                                    <input type="text" id="date" class="form-control">
+                                    <hr>
+                                    <button class="btn btn-default badge-primary" id="submit-flight" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                <div class = "col-8">
+                    <div class="row">
+                        <div class="col w-100 badge-primary pl-3">
+                                Flight Information
+                                <div class="row bg-light">
+                                    <div class="col-6 text-dark" id="flight-information">
+                                        <p>Aircraft:</p>
+                                        <p>Status:</p>
+                                        <p>Great Circle Distance</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERE AND BELOW IS ALL CODE FOR THE WEATHER CAROUSEL/ABOVE IS THE CLOTHING CAROUSEL-->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                                <div class="col w-100 badge-primary ml-3 mr-3">
+                                        Packing Suggestions
+                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="col bg-light ml-3 mr-3">
+                                ALL OF THE IMAGES NEED TO BE APPENDED HERE
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class = "col-8 bg-light">
+                            <div class="row">
+                                <div class="col w-100 badge-primary">
+                                       Weather Information
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                           <img id="weather-image" src="not-found.png"/>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="mt-3" id="weather-body">
+                                            <p id="headline">Headline: </p>
+                                            <p id="region">Region Affected: </p>
+                                            <p id="high-temp">High Temp: </p>
+                                            <p id="low-temp">Low Temp: </p>
+                                            <p id="forecast">Forecast Description: </p>
+                                        </div>
+                                        </div>
+                                    </div>
+                           
+                        </div>
+        </div> <!--End of Row Div-->
+            
+        </div>
+        <!--Bootstrap Link-->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
  <!--Carousel does not work without the scripts below-->
+ <script src="java.js"></script>
+
+ <!-- JQuery -->
+ <script src="https://code.jquery.com/jquery.js"></script>
 
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
  <link rel="stylesheet" href="style.css">
-<div class="jumbotron text-center">
-    <h1>Flights and Fahrenheight</h1>
-</div>
-    </head>
-    <body>
-        <div class ="container bg">
-            <div class = "row">
-                <div class = "col-4">
-                    <div class="w-100 badge-primary pl-3">
-                            Destination Information
-                    </div>
-                    <form class="mb-2 border border-primary">
-                        <div class="m-3">
-                            <div class="row">
-                                <div class="col w-100">
-                                        <label for="destination">City</label>
-                                        <input type="text" id="destination" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col">
-                                        <label for="date">Arrival Date</label>
-                                        <input type="text" id="date" class="form-control form-control-sm">
-                                </div>
-                                <div class="col">
-                                        <label for="airline">Departure Date</label>
-                                        <input type="text" id="airline" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <button class="form-control mt-3 ml-2 mr-2 badge-secondary" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class = "col-8">
-                   
-                </div>
-            </div>
-
-            <!-- HERE AND BELOW IS ALL CODE FOR THE WEATHER CAROUSEL/ABOVE IS THE CLOTHING CAROUSEL-->
-                <div class="row mb-3">
-                    <div class="col text-center badge-primary">
-                            <h1>Forecast</h1>
-<!--Carousel,slide animation,data-ride ="carousel" tells Bootstrap to begin animating the carousel immediately-->
-
-                        <!--Carousel Buttons at the bottom-->
-<div id="carouselWeather" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselWeather" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselWeather" data-slide-to="1"></li>
-          <li data-target="#carouselWeather" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <!--First Slide for Weather Carousel-->
-          <div class="carousel-item mb-3 active">
-              <div class = "row">
-                  <div class="col-3">
-                        <div class="card text-white bg-dark" style="width: 18rem;">
-                                <div class="card-header" id="first-header" >Header ID=first-header</div>
-                                <img src="images/sun.png" class="card-img-top" id="first-image" alt="....">
-                                <div class="card-body">
-                                    
-                                   <p class="card-text-body" id="first-text">class=card-text-body ID=first-text</p>
-                                    
-                                </div>
-                                </div>
-                  </div>
-                  <div class="col-3">
-                        <div class="card text-white bg-dark" style="width: 18rem;">
-                                <div class="card-header" id="second-header" >Header ID=second-header</div>
-                                <img src="images/thunder-cloud.png" class="card-img-top" id="second-image" alt="....">
-                                <div class="card-body">
-                                    
-                                   <p class="card-text-body" id="first-text">class=card-text-body ID=second-text</p>
-                                    
-                                </div>
-                                </div>
-                    </div>
-                    <div class="col-3">
-                            <div class="card text-white bg-dark" style="width: 18rem;">
-                                    <div class="card-header" id="third-header" >Header ID=third-header</div>
-                                    <img src="images/sun.png" class="card-img-top" id="third-image" alt="....">
-                                    <div class="card-body">
-                                        
-                                       <p class="card-text-body" id="second-text">class=card-text-body ID=third-text</p>
-                                        
-                                    </div>
-                                    </div>
-                        </div>
-                        <div class="col-3">
-                                <div class="card text-white bg-dark" style="width: 18rem;">
-                                        <div class="card-header" id="fourth-header" >Header ID=fourth-header</div>
-                                        <img src="images/cloudy.png" class="card-img-top" id="fourth-image" alt="....">
-                                        <div class="card-body">
-                                            
-                                           <p class="card-text-body" id="third-text">class=card-text-body ID=fourth-text</p>
-                                            
-                                        </div>
-                                        </div>
-                            </div>   
-              </div>                                     
-          </div>
-    <!--2nd Slide for Weather Carousel-->
-          <div class="carousel-item mb-3">
-                <div class = "row">
-                        <div class="col-3">
-                              <div class="card text-white bg-dark" style="width: 18rem;">
-                                    <div class="card-header" id="fifth-header" >Header ID=fifth-header</div>
-                                      <img src="images/snowflake.png" class="card-img-top" id="fifth-image" alt="....">
-                                      <div class="card-body">
-                                          
-                                         <p class="card-text-body" id="fourth-text">class=card-text-body ID=fifth-text</p>
-                                          
-                                      </div>
-                                      </div>
-                        </div>
-                        <div class="col-3">
-                              <div class="card text-white bg-dark" style="width: 18rem;">
-                                    <div class="card-header" id="sixth-header" >Header ID=sixth-header</div>
-                                      <img src="images/rain-cloud.png" class="card-img-top" id="sixth-image" alt="....">
-                                      <div class="card-body">
-                                          
-                                         <p class="card-text-body" id="fifth-text">class=card-text-body ID=sixth-text</p>
-                                          
-                                      </div>
-                                      </div>
-                          </div>
-                          <div class="col-3">
-                                  <div class="card text-white bg-dark" style="width: 18rem;">
-                                        <div class="card-header" id="seventh-header" >Header ID=seventh-header</div>
-                                          <img src="images/snow.png" class="card-img-top" id="seventh-image" alt="....">
-                                          <div class="card-body">
-                                              
-                                             <p class="card-text-body" id="sixth-text">class=card-text-body ID=seventh-text</p>
-                                              
-                                          </div>
-                                          </div>
-                              </div>
-                              <div class="col-3">
-                              </div> 
-                    </div>
-                       
-          </div>
-          <!--Third slide for Weather Carousel-->
-          <div class="carousel-item mb-3">
-                <div class="card text-white bg-dark" style="width: 18rem;">
-                        <div class="card-header">might change this to a plot</div>
-                        <img src="images/sun-and-cloud.png" class="card-img-top" alt="....">
-                        <div class="card-body">
-                          
-                         <p class ="text" id="first-text">class=card-text-body ID=first-text</p>
-                          
-                        </div>
-                      </div>
-                      
-          </div>
-          <!--CAROUSEL SLIDER BUTTONS-->
-        </div> <!-- This div to the left is the end of div for carousel inner -->
-
-        <a class="carousel-control-prev" href="#carouselWeather" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselWeather" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div> <!--This is the end div for this ENTIRE carousel-->
-                    </div>
-                </div> <!--End div for weather carousel's row-->
-
-            <div class="row">
-                <div class="col text-center badge-danger">
-                    <h1>Clothing Suggestions</h1>
-             <!--CLOTHING CAROUSEL HEREEEE-->
-             <div id="carouselClothing" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselClothing" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselClothing" data-slide-to="1" ></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item mb-3 active">
-                                <div class="row">
-                                        <div class="col-3">njfs</div>
-                                        <div class="col-3">fdsnkl</div>
-                                        <div class="col-3">fsdkl</div>
-                                        <div class="col-3">sdfank</div>
-                                    </div>
-                        </div>
-                        <div class="carousel-item mb-3">
-                            <div class="row">
-                                <div class="col-3">fdsa</div>
-                                <div class="col-3">kjn</div>
-                                <div class="col-3">nkj</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselClothing" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselClothing" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                </div>
-            </div>
-        </div>
-        </div>
     </body>
 </html>
