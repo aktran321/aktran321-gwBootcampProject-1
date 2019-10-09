@@ -13,9 +13,8 @@
     background-size: cover;
   }
 
-   #weather-image {
-    margin-top:20px;
-    margin-bottom:20px;
+   .weather-image {
+     margin:auto;
     width:200px;
     height:200px;
     /* background: url(http://goo.gl/vyAs27) no-repeat scroll 0 0; */
@@ -24,4 +23,12 @@
   button:hover {
     color: rgb(0, 0, 0);
     box-shadow: 0 5px 15px rgba(255, 21, 21, 0.87);
+  }
+
+  .weather-text {
+    font-weight:bold;
+  }
+  .carousel-control.prev, .carousel-control.next {
+    left: 0;
+    z-index: 1;
   }

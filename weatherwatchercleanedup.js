@@ -68,27 +68,54 @@ $(document).ready(function () {
                         console.log("High Temp: "+localWeather[i].temperatureHigh + "F");
                         console.log("Low Temp: "+localWeather[i].temperatureLow + "F");
                         
+                        $("#region").empty();
+                        $("#headline").empty();
+                        $("#forecast2").empty();
+                        $("#high-temp").empty();
+                        $("#low-temp").empty();
                         
-                        $("#region").text("Region: "+(localWeather[i].regionAffected));
-                        $("#headline").text("Headline: " +localWeather[i].headline);
+                        
+                        $("#region").append("<span class='weather-text'>Region: </span>"+(localWeather[i].regionAffected));
+                        $("#headline").append("<span class='weather-text'>Headline: </span>"+(localWeather[i].headline));
                         //console.log("condition is : "+ (localWeather[i].conditions[0].display));
-                        $("#forecast").text("Forecast: "+(localWeather[i].forecastDesc));
-                        $("#high-temp").text("High Temperature: "+ (localWeather[i].temperatureHigh + "F"));
-                        $("#low-temp").text("Low Temperature: "+ (localWeather[i].temperatureLow + "F"));
-
+                        $("#forecast").append("<span class='weather-text'>Forecast: </span>"+(localWeather[i].forecastDesc));
+                        $("#high-temp").append("<span class='weather-text'>High Temp: </span>"+(localWeather[i].temperatureHigh + "F"));
+                        $("#low-temp").append("<span class='weather-text'>Low Temp: </span>"+(localWeather[i].temperatureLow + "F"));
+                            $("#image-weather").empty();
+                            $("#clothing-item1").empty();
+                            $("#clothing-item2").empty();
+                            $("#clothing-item3").empty();
                         var condition = localWeather[i].conditions[0].display;
                         if((condition)=="Overcast"){
-                            $("#image-weather").append("<img id='weather-image' src='images/sun-and-cloud.png'/> ")
+                            $("#image-weather").append("<img class='weather-image w-100' align:'middle' src='images/sun-and-cloud.png'/> ");
+                            $("#clothing-item1").append("<img class='weather-image w-100' align:'middle' src='images/Archive/clear-weather-outfit/sunnyoutfitmale03.jpg'/> ");
+                            $("#clothing-item2").append("<img class='weather-image w-100' align:'middle' src='images/Archive/clear-weather-outfit/femaleoutfit02.jpg'/> ");
+                            $("#clothing-item3").append("<img class='weather-image w-100' align:'middle' src='images/Archive/clear-weather-outfit/sunnyoutfit05.jpg'/> ");
                         } else if (condition == "Snow"){
-                            $("#image-weather").append("<img id='weather-image' src='images/snowflake.png'/> ")
+                            $("#image-weather").append("<img class='weather-image w-100' align:'middle' src='images/snowflake.png'/> ");
+                            $("#clothing-item1").append("<img class='weather-image w-100' align:'middle' src='images/Archive/cold-weather-outfit/snowoutfit/femalesnowoutfit03.jpg'/> ");
+                            $("#clothing-item2").append("<img class='weather-image w-100' align:'middle' src='images/Archive/cold-weather-outfit/snowoutfit/malesnowoutfit01.jpg'/> ");
+                            $("#clothing-item3").append("<img class='weather-image w-100' align:'middle' src='images/Archive/cold-weather-outfit/snowoutfit/couplesnowoutfit.jpg'/> ");
                         } else if (condition == "Thunderstorm"){
-                            $("#image-weather").append("<img id='weather-image' src='images/thunder-cloud.png'/> ")
+                            $("#image-weather").append("<img class='weather-image w-100' align:'middle' src='images/thunder-cloud.png'/> ");
+                            $("#clothing-item1").append("<img class='weather-image w-100' align:'middle' src='images/Archive/rainy-weather-outfit/male/twister_tornado.jpg'/> ");
+                            $("#clothing-item2").append("<img class='weather-image w-100' align:'middle' src='images/Archive/rainy-weather-outfit/female/IMG_1189.jpg'/> ");
+                            $("#clothing-item3").append("<img class='weather-image w-100' align:'middle' src='images/Archive/rainy-weather-outfit/couple/IMG_1172.jpg'/> ");
                         } else if (condition == "Rain" || condition =="Rainy") {
-                            $("#image-weather").append("<img id='weather-image' src='images/rain-cloud.png'/> ")
+                            $("#image-weather").append("<img class='weather-image w-100' align:'middle' src='images/rain-cloud.png'/> ");
+                            $("#clothing-item1").append("<img class='weather-image w-100' align:'middle' src='images/Archive/rainy-weather-outfit/male/IMG_1176.jpg'/> ");
+                            $("#clothing-item2").append("<img class='weather-image w-100' align:'middle' src='images/Archive/rainy-weather-outfit/female/IMG_1185.jpg'/> ");
+                            $("#clothing-item3").append("<img class='weather-image w-100' align:'middle' src='images/Archive/rainy-weather-outfit/couple/IMG_1172.jpg'/> ");
                         } else if (condition == "Mostly Cloudy" || condition == "Cloudy"){
-                            $("#image-weather").append("<img id='weather-image' src='images/cloudy.png'/> ")
+                            $("#image-weather").append("<img class='weather-image w-100' align:'middle' src='images/cloudy.png'/> ");
+                            $("#clothing-item1").append("<img class='weather-image w-100' align:'middle' src='images/Archive/cold-weather-outfit/malewinteroutfit01.jpg'/> ");
+                            $("#clothing-item2").append("<img class='weather-image w-100' align:'middle' src='images/Archive/cold-weather-outfit/femalewinter01.jpg'/> ");
+                            $("#clothing-item3").append("<img class='weather-image w-100' align:'middle' src='images/Archive/cold-weather-outfit/wintercouple.jpg'/> ");
                         }else{
-                            $("#image-weather").append("<img id='weather-image' src='images/sun.png'/> ")
+                            $("#image-weather").append("<img class='weather-image w-100' align:'middle' src='images/sun.png'/> ");
+                            $("#clothing-item1").append("<img class='weather-image w-100' align:'middle' src='images/Archive/clear-weather-outfit/femaleoutfit01.jpg'/> ");
+                            $("#clothing-item2").append("<img class='weather-image w-100' align:'middle' src='images/Archive/clear-weather-outfit/sunnyoutfitmale02.jpg'/> ");
+                            $("#clothing-item3").append("<img class='weather-image w-100' align:'middle' src='images/Archive/clear-weather-outfit/sunnyoutfitmale03.jpg'/> ");
                         }
                     }
                 }
