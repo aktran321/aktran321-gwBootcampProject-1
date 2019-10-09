@@ -62,24 +62,33 @@ $(document).ready(function () {
                     // console.log("Usercompseconds: "+ userCompSeconds);
                     if ((firstWeek < userCompSeconds) && (userCompSeconds < secondWeek)) {
                        console.log(localWeather[i].regionAffected);
-                        console.log(localWeather[i].headline);
-                        console.log(localWeather[i].conditions[0].display);
-                        console.log(localWeather[i].forecastDesc);
-                        console.log(localWeather[i].temperatureHigh + "F");
-                        console.log(localWeather[i].temperatureLow + "F");
+                        console.log("Headline: "+localWeather[i].headline);
+                        console.log("Conditinon: "+localWeather[i].conditions[0].display);
+                        console.log("Forecast Description: "+localWeather[i].forecastDesc);
+                        console.log("High Temp: "+localWeather[i].temperatureHigh + "F");
+                        console.log("Low Temp: "+localWeather[i].temperatureLow + "F");
                         
                         
                         $("#region").text("Region: "+(localWeather[i].regionAffected));
                         $("#headline").text("Headline: " +localWeather[i].headline);
-                        //(localWeather[i].conditions[0].display);
+                        //console.log("condition is : "+ (localWeather[i].conditions[0].display));
                         $("#forecast").text("Forecast: "+(localWeather[i].forecastDesc));
                         $("#high-temp").text("High Temperature: "+ (localWeather[i].temperatureHigh + "F"));
                         $("#low-temp").text("Low Temperature: "+ (localWeather[i].temperatureLow + "F"));
 
-                        if((localWeather[i].conditions[0].display)=="Overcast"){
+                        var condition = localWeather[i].conditions[0].display;
+                        if((condition)=="Overcast"){
                             $("#image-weather").append("<img id='weather-image' src='images/sun-and-cloud.png'/> ")
-                        } else{
+                        } else if (condition == "Snow"){
                             $("#image-weather").append("<img id='weather-image' src='images/snowflake.png'/> ")
+                        } else if (condition == "Thunderstorm"){
+                            $("#image-weather").append("<img id='weather-image' src='images/thunder-cloud.png'/> ")
+                        } else if (condition == "Rain" || condition =="Rainy") {
+                            $("#image-weather").append("<img id='weather-image' src='images/rain-cloud.png'/> ")
+                        } else if (condition == "Mostly Cloudy" || condition == "Cloudy"){
+                            $("#image-weather").append("<img id='weather-image' src='images/cloudy.png'/> ")
+                        }else{
+                            $("#image-weather").append("<img id='weather-image' src='images/sun.png'/> ")
                         }
                     }
                 }
