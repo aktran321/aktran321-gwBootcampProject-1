@@ -75,6 +75,12 @@ $(document).ready(function () {
                         $("#forecast").text("Forecast: "+(localWeather[i].forecastDesc));
                         $("#high-temp").text("High Temperature: "+ (localWeather[i].temperatureHigh + "F"));
                         $("#low-temp").text("Low Temperature: "+ (localWeather[i].temperatureLow + "F"));
+
+                        if((localWeather[i].conditions[0].display)=="Overcast"){
+                            $("#image-weather").append("<img id='weather-image' src='images/sun-and-cloud.png'/> ")
+                        } else{
+                            $("#image-weather").append("<img id='weather-image' src='images/snowflake.png'/> ")
+                        }
                     }
                 }
             });
